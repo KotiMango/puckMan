@@ -1,3 +1,4 @@
+var gDeadGhostsCnt = 0;
 function printMat(mat, selector) {
   var strHTML = '<table border="0"><tbody>';
   for (var i = 0; i < mat.length; i++) {
@@ -65,6 +66,7 @@ function popGhost(loc, ghosts) {
     if (JSON.stringify(currGhost.location) === JSON.stringify(loc)) idx = i;
   }
   ghosts.splice(idx, 1);
+  gDeadGhostsCnt++;
   return ghosts;
 }
 function getRandomColor() {

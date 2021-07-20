@@ -16,7 +16,7 @@ function setSuper() {
   gPacman.isSuper = true;
   setTimeout(function () {
     gPacman.isSuper = false;
-    for (var i = 0; i < 3 - gGhosts.length; i++) {
+    for (var i = 0; i < gDeadGhostsCnt; i++) {
       createGhost(gBoard);
     }
   }, 5000);

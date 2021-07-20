@@ -2,7 +2,7 @@
 const WALL = '#';
 const FOOD = '.';
 const EMPTY = ' ';
-
+var gIntervalCherry;
 var gBoard;
 var gGame = {
   score: 0,
@@ -16,7 +16,7 @@ function init() {
   createSuperfoods();
   printMat(gBoard, '.board-container');
   gGame.isOn = true;
-  setInterval(injectCherry, 10000);
+  gIntervalCherry = setInterval(injectCherry, 10000);
 }
 
 function buildBoard() {
@@ -64,5 +64,6 @@ function gameOver(isWon) {
   console.log('Game Over');
   gGame.isOn = false;
   clearInterval(gIntervalGhosts);
+  clearInterval(gIntervalCherry);
   createModal(msg);
 }

@@ -25,6 +25,7 @@ function createGhosts(board, amount) {
 }
 
 function moveGhosts() {
+  console.log(gGhosts.length);
   for (var i = 0; i < gGhosts.length; i++) {
     var ghost = gGhosts[i];
     moveGhost(ghost);
